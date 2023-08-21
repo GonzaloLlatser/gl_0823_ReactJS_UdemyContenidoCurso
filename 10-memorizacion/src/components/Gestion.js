@@ -4,6 +4,7 @@ import { Empleados } from './Empleados'
 export const Gestion = () => {
 
     const [nombre, setNombre] = useState('');
+    const [pagina, setPagina] = useState(1);
 
    
 
@@ -28,9 +29,12 @@ export const Gestion = () => {
 
             <h2>Listado de empleados:</h2>
 
-            <p>Los usuarios son gestionados por {nombre}</p>
+            <p>Los usuarios son gestionados por {nombre} vienen del jsonplaceholder...</p>
 
-            <Empleados />
+            <button onClick={()=>{setPagina(1)}}>pagina 1</button>
+            <button onClick={()=>{setPagina(2)}}>pagina 2</button>
+
+            <Empleados pagina ={pagina}/>
         </div>
     )
 }
